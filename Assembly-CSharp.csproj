@@ -90,10 +90,10 @@
      <Compile Include="Assets\Assets\Scripts\Views\UIDemoScreen.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\BoundaryHandler.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\ClickerScreen.cs" />
+     <Compile Include="Assets\CookieClicker\Scripts\CookieObject.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\CookieSpawner.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\IBoundaryListener.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\StatsManager.cs" />
-     <Compile Include="Assets\CookieObject.cs" />
      <None Include="Assets\Assets\DOTween\DOTween43.xml" />
      <None Include="Assets\Assets\DOTween\DOTween46.xml" />
      <None Include="Assets\Assets\DOTween\readme.txt" />
