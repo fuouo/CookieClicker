@@ -20,7 +20,7 @@ public class BoundaryHandler : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
-		//Debug.Log ("[BoundaryHandler] Collision detected: " + collision.gameObject.name);
+//		Debug.Log ("[BoundaryHandler] Collision detected: " + collision.gameObject.name);
 		APoolable poolableObject = collision.gameObject.GetComponent<APoolable> ();
 
 		if (this.boundaryListener != null) {

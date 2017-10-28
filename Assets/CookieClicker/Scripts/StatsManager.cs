@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatsManager : MonoBehaviour {
 
@@ -14,9 +15,9 @@ public class StatsManager : MonoBehaviour {
 		}
 	}
 
-	[SerializeField] public float cookieAmount;
-	[SerializeField] public float cookiePerSecond;
-	[SerializeField] public float cookieUpgrade;
+	[SerializeField] public int cookieAmount;
+	[SerializeField] public int cookiePerSecond;
+	[SerializeField] public int cookieUpgrade;
 
 	// Use this for initialization
 	void Start () {
@@ -32,12 +33,15 @@ public class StatsManager : MonoBehaviour {
 	void UpgradeCookieMultiplier(){
 		cookieAmount -= 50;
 		cookiePerSecond += cookieUpgrade;
-		EventBroadcaster.Instance.PostEvent (EventNames.UPDATE_COOKIE_PER_SECOND);
+
+		var parameters = new Parameters ();
+		parameters.PutExtra (StatsManager.COOKIE_PER_SECOND_KEY, cookiePerSecond);
+		EventBroadcaster.Instance.PostEvent (EventNames.UPDATE_COOKIE_PER_SECOND, parameters);
 	}
 
 	void OnCookieAdd(Parameters parameters){
-		bool isAutoSpawn = parameters.GetBoolExtra (CookieSpawner.AUTO_SPAWN_KEY, false);
-		float addedCookie = 1;
+		var isAutoSpawn = parameters.GetBoolExtra (CookieSpawner.AUTO_SPAWN_KEY, false);
+		var addedCookie = 1;
 		if (isAutoSpawn) {
 			addedCookie = cookiePerSecond;
 		} else { 

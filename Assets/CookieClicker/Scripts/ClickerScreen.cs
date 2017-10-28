@@ -16,6 +16,9 @@ public class ClickerScreen : View {
 		EventBroadcaster.Instance.AddObserver (EventNames.UPDATE_COOKIE_AMOUNT, this.UpdateCookieAmount);
 		EventBroadcaster.Instance.AddObserver (EventNames.UPDATE_COOKIE_PER_SECOND, this.UpdateCookiePerSecond);
 
+		var parameters = new Parameters ();
+		parameters.PutExtra (StatsManager.COOKIE_PER_SECOND_KEY, 1);
+		EventBroadcaster.Instance.PostEvent (EventNames.UPDATE_COOKIE_PER_SECOND, parameters);
 
 	}
 	
@@ -30,13 +33,12 @@ public class ClickerScreen : View {
 	}
 
 	public void UpdateCookiePerSecond(Parameters parameter){
-		int perSecond =  Mathf.FloorToInt(parameter.GetFloatExtra (StatsManager.COOKIE_PER_SECOND_KEY, 1.0f));
-
+		var perSecond =  parameter.GetIntExtra (StatsManager.COOKIE_PER_SECOND_KEY, 1);
 		cookiePerSecond.text = perSecond +"";
 	}
 
 	public void UpdateCookieAmount(Parameters parameter){
-		int amount =  Mathf.FloorToInt(parameter.GetFloatExtra (StatsManager.COOKIE_AMOUNT_KEY, 1.0f));
+		var amount =  parameter.GetIntExtra (StatsManager.COOKIE_AMOUNT_KEY, 1);
 		cookieAmount.text = amount + "";
 	
 	}

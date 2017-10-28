@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CookieObject.cs">
+    <Files>
+      <File FileName="Assets\CookieObject.cs" Line="18" Column="62" />
+      <File FileName="Assets\Assets\Scripts\BallLogic\BallObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Assets\Scripts\BallLogic\BallSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\CookieClicker\Scripts\CookieSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\CookieClicker\Scripts\ClickerScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\CookieClicker\Scripts\StatsManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Assets\Scripts\BallLogic\BoundaryHandler.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

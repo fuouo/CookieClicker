@@ -53,8 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\Assets\Scripts\BallLogic\BallObject.cs" />
      <Compile Include="Assets\Assets\Scripts\BallLogic\BallSpawner.cs" />
-     <Compile Include="Assets\Assets\Scripts\BallLogic\BoundaryHandler.cs" />
-     <Compile Include="Assets\Assets\Scripts\BallLogic\IBoundaryListener.cs" />
      <Compile Include="Assets\Assets\Scripts\BroadcasterDemo\BallObjectCreator.cs" />
      <Compile Include="Assets\Assets\Scripts\BroadcasterDemo\BallSpawnControlUI.cs" />
      <Compile Include="Assets\Assets\Scripts\BroadcasterDemo\BallSpawnEventNames.cs" />
@@ -90,9 +88,12 @@
      <Compile Include="Assets\Assets\Scripts\Views\ScrollDemoScreen.cs" />
      <Compile Include="Assets\Assets\Scripts\Views\UIAnimScreen.cs" />
      <Compile Include="Assets\Assets\Scripts\Views\UIDemoScreen.cs" />
+     <Compile Include="Assets\CookieClicker\Scripts\BoundaryHandler.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\ClickerScreen.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\CookieSpawner.cs" />
+     <Compile Include="Assets\CookieClicker\Scripts\IBoundaryListener.cs" />
      <Compile Include="Assets\CookieClicker\Scripts\StatsManager.cs" />
+     <Compile Include="Assets\CookieObject.cs" />
      <None Include="Assets\Assets\DOTween\DOTween43.xml" />
      <None Include="Assets\Assets\DOTween\DOTween46.xml" />
      <None Include="Assets\Assets\DOTween\readme.txt" />

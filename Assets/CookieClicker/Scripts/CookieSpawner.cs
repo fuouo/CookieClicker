@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieSpawner : MonoBehaviour {
+public class CookieSpawner : MonoBehaviour, IBoundaryListener {
+
+
 
 	public const string AUTO_SPAWN_KEY = "AUTO_SPAWN_KEY";
+
+	[SerializeField] private GameObjectPool objectPool;
+	[SerializeField] private Transform spawnPointY;
 
 	[SerializeField] GameObject cookieObject;
 	[SerializeField] GameObject cookieSpawnerArea;
 
+	[SerializeField] private BoundaryHandler boundaryHandler;
+
 	void Start(){
+		this.objectPool.Initialize ();
+		this.boundaryHandler.SetListener (this); 
 		InvokeRepeating ("SpawnCookie", 0.0f, 1.0f);
 
 		EventBroadcaster.Instance.AddObserver (EventNames.ON_SPAWN_COOKIE_OBJ, this.SpawnCookieObject );
@@ -29,17 +38,24 @@ public class CookieSpawner : MonoBehaviour {
 
 	void SpawnCookieObject(Parameters parameters){
 
-		int spawnCount =  Mathf.FloorToInt(parameters.GetFloatExtra (StatsManager.COOKIE_PER_SECOND_KEY, 1.0f));
+		var spawnCount =  parameters.GetIntExtra (StatsManager.COOKIE_PER_SECOND_KEY, 1);
 
-		Debug.Log (parameters.GetFloatExtra (StatsManager.COOKIE_PER_SECOND_KEY, 1.0f));
+		if (!this.objectPool.HasObjectAvailable (spawnCount))
+			return;
+		
+		APoolable[] poolableObjects = this.objectPool.RequestPoolableBatch (spawnCount);
 
-		for (int i = 0; i < spawnCount; i++) {
+//		for (int i = 0; i < spawnCount; i++) {
+//
+//			GameObject cookie = Instantiate (cookieObject);
+//			cookie.transform.SetParent (cookieSpawnerArea.transform);
+//			var pos = new Vector3 (Random.Range (-0.5f, 0.5f), 0, 0);
+//			cookie.transform.localPosition = pos;
+//		}
+	}
 
-			GameObject cookie = Instantiate (cookieObject);
-			cookie.transform.SetParent (cookieSpawnerArea.transform);
-			var pos = new Vector3 (Random.Range (-0.5f, 0.5f), 0, 0);
-			cookie.transform.localPosition = pos;
-		}
+	public void OnExitBoundary(APoolable poolableObject) {
+		this.objectPool.ReleasePoolable (poolableObject);
 	}
 
 

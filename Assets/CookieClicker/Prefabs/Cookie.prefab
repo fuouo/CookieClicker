@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 135291728365580902}
   - component: {fileID: 23264906971892032}
   - component: {fileID: 54083721268465678}
+  - component: {fileID: 114327040395250722}
   m_Layer: 0
   m_Name: Cookie
   m_TagString: Untagged
@@ -66,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1196717556466164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 0.15000008}
+  m_LocalPosition: {x: 0, y: 7, z: -2.89}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.15000008}
   m_Children:
   - {fileID: 4013980357611554}
   m_Father: {fileID: 0}
@@ -127,6 +128,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &114327040395250722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196717556466164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8104444d02afb4f8915acee64cabde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135291728365580902
 SphereCollider:
   m_ObjectHideFlags: 1
