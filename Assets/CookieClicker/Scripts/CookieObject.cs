@@ -5,8 +5,8 @@ using UnityEngine;
 public class CookieObject : APoolable {
 
 	private const float START_Y_POS = 7f;
-	private const float MIN_X_POS =  -2.46f;
-	private const float MAX_X_POS = 2.46f;
+	private const float MIN_X_POS =  -2.0f;
+	private const float MAX_X_POS = 2.0f;
 
 	// Use this for initialization
 	void Start () {
